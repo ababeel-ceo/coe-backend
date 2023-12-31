@@ -71,7 +71,7 @@ app.post('/api/createuser', (req, res) => {
   db.query(insertQuery, [username, password, name], (err, result) => {
     if (err) {
       console.error('Error inserting user:', err);
-      res.status(500).json({ error: 'Internal Server Error' });
+      res.status(500).json({ message: 'Internal Server Error' });
     } else {
       console.log('User inserted successfully');
       res.status(201).json({ message: 'User inserted successfully', user_id: result.insertId });
